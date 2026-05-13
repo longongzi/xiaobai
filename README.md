@@ -1,104 +1,74 @@
-# 小白 🐣
+# 小白 — 零成本终端 AI 助手 🚀
 
-> **有问题？找小白。** 零成本终端 AI 助手，不需要 API Key，不需要注册，不需要付费。
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.8%2B-blue" alt="Python">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="License">
+  <img src="https://img.shields.io/badge/zero--cost-🎯-orange" alt="Zero Cost">
+  <img src="https://img.shields.io/github/stars/longongzi/xiaobai?style=social" alt="Stars">
+</p>
 
+**小白**是一个零成本、零配置的终端 AI 助手。只需一行命令，即可在终端中与 AI 对话，无需注册、无需 API Key、无需付费。
+
+```bash
+pip install xiaobai
+小白 "什么是量子计算？"
 ```
-小白 帮我写一个Python爬虫
-小白 今天深圳天气怎么样？
-小白 帮我翻译成英文
-```
 
----
+## ✨ 特性
 
-## 它能做什么？
+- 🆓 **完全免费** — 基于 Zero Token 网关，零成本使用
+- 🚀 **即装即用** — `pip install xiaobai`，无需配置
+- 💬 **三种模式** — 单次问答、连续对话、语音输入
+- 🌐 **纯 Python** — 零依赖，轻量快速
+- 🏠 **本地运行** — 数据不上云，隐私安全
 
-小白是一个跑在终端的 AI 助手，你问什么它答什么。和 ChatGPT 一样聪明，**但完全免费**。
-
-- ✅ **写代码** — `小白 写一个 Flask 登录页面`
-- ✅ **翻译** — `小白 把这段话翻译成日语`
-- ✅ **查资料** — `小白 Python 的装饰器是什么`
-- ✅ **写文案** — `小白 帮我写一段产品介绍`
-- ✅ **语音对话** — `小白 --voice`
-- 🔜 图片识别
-- 🔜 多轮对话历史
-- 🔜 浏览器插件
-
-## 一分钟上手
-
-### 1. 安装
+## 📦 安装
 
 ```bash
 pip install xiaobai
 ```
 
-### 2. 启动 Zero Token 网关（免费 AI 引擎）
-
-小白默认连接本地的 Zero Token 网关，这是它能免费的原因。
-
-在另一个终端启动：
+或直接运行脚本：
 
 ```bash
-# 从项目仓库下载网关
-git clone https://github.com/longongzi/zero-token-gateway.git
-cd zero-token-gateway
-python zerotoken_gateway.py
+git clone https://github.com/longongzi/xiaobai.git
+cd xiaobai
+python xiaobai.py
 ```
 
-或者用你喜欢的任何 OpenAI 兼容 API。
+## 🎯 使用方法
 
-### 3. 开聊！
-
+### 快速问答
 ```bash
-小白 你好，你叫什么名字？
+小白 "Python 如何读取 CSV 文件？"
 ```
 
-小白会回答你。就这么简单。
-
-## 自定义
-
-小白的配置保存在 `~/.xiaobai_config.json`，你可以改：
-
+### 连续对话
 ```bash
-小白 config                # 查看当前配置
-小白 config set api_url http://你的地址/v1/chat/completions
-小白 config set model gpt-4o
-小白 config set temperature 0.5
+小白 --chat
 ```
 
-## 语音模式
-
+### 语音输入
 ```bash
 小白 --voice
 ```
 
-Windows 下自动朗读回复内容（需要 `pip install pywin32`）。
+### 指定模型
+```bash
+小白 "写一首诗" --model gpt-4o-mini
+```
 
-## 为什么免费？
+## 🧠 原理
 
-小白后端连接的是 [Zero Token Gateway](https://github.com/longongzi/zero-token-gateway)，它通过浏览器复用在 AI 网站的登录态，实现零成本调用。
+小白通过 Zero Token 免费 AI 网关（`localhost:8081`）与 AI 模型通信。网关由 [OpenClaw Zero Token](https://github.com/openclaw-zero/zerotoken) 提供支持。
 
-**原理**：你登录一次 ChatGPT/DeepSeek 等网站后，网关复用这个会话，你问问题它回答，不消耗任何 API 额度。
+## 🤝 赞助
 
-## 小白的哲学
+如果你觉得小白对你有帮助，欢迎赞助支持我继续开发：
 
-- **零门槛** — pip install 就能用
-- **零成本** — 不需要一分钱 API 费
-- **零配置** — 装上就能问
-- **中文优先** — 对中文用户友好
+- **[GitHub Sponsors](https://github.com/sponsors/longongzi)** — 每月赞助
+- **微信** — 扫码赞助（建设中）
 
-## 📢 支持小白
+## 📄 开源协议
 
-小白是完全免费的开源项目。如果你觉得它有用，请考虑支持：
-
-**[⭐ 点个 Star](https://github.com/longongzi/xiaobai)** — 最大的支持！
-
-**[☕ 请小白喝咖啡](https://github.com/sponsors/longongzi)** — 赞助开发者
-
-每一分钱都会用来：
-- 让小白更快更聪明
-- 免费 AI 模型持续接入
-- 新功能：图片、文件、插件系统
-
-## License
-
-MIT
+MIT License © 2024 [longongzi](https://github.com/longongzi)

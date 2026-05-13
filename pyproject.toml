@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+requires = ["setuptools>=77.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "xiaobai"
@@ -10,21 +10,14 @@ readme = "README.md"
 authors = [
     {name = "longongzi", email = "longongzi@users.noreply.github.com"}
 ]
-license = {text = "MIT"}
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Environment :: Console",
-    "Intended Audience :: End Users/Desktop",
-]
+license = "MIT"
 keywords = ["ai", "cli", "chatbot", "zero-cost", "terminal"]
 requires-python = ">=3.8"
 dependencies = []
 
 [project.scripts]
 xiaobai = "xiaobai:main"
-小白 = "xiaobai:main"
+"小白" = "xiaobai:main"
 
 [project.urls]
 Homepage = "https://github.com/longongzi/xiaobai"
